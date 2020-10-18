@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Exercicio7 {
 	public static void main(String[] args) {
+		Exercicio7 de = new Exercicio7();
 		Scanner input = new Scanner(System.in);
         System.out.print("Valor de a: ");
         double a = input.nextDouble();
