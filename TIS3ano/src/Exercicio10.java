@@ -5,14 +5,11 @@ public class Exercicio10 {
 		String str = "Roma me tem amor";
 		str = str.replaceAll("\\s+", "");
 		str = str.toLowerCase();
-		System.out.println(str);
 		if(checkPalindrome(str)) {
 			System.out.println("A string \"" + str + "\" é palindromo");
 		} else {
 			System.out.println("A string \"" + str + "\" não é palindromo");
 		}
-		
-
 	}
 	
 	static boolean checkPalindrome(String s) {
@@ -25,5 +22,4 @@ public class Exercicio10 {
 		}
 		return res;
 	}
-
 }
