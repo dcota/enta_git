@@ -12,7 +12,7 @@ public class Exercicio11b {
 		while (menu){
 			menu();
 			int menuNumberChoice = -1;
-			while(menuNumberChoice < 1 || menuNumberChoice > 3) {
+			//while(menuNumberChoice < 1 || menuNumberChoice > 3) {
 				if(!in.hasNextInt()) {
 					in.nextLine();
 					continue;
@@ -22,7 +22,7 @@ public class Exercicio11b {
 					System.out.println("Invalid Input - Retry");
 					continue;
 				}
-			}
+			//}
 			
 			if(menuNumberChoice == 1){
 				int n;
