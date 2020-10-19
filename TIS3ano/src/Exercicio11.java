@@ -10,7 +10,7 @@ public class Exercicio11 {
 
 	public static void main(String[] args) {
 		
-
+		while(true) {
 		String op = menu();
 		switch(op) {
 		case "1":
@@ -22,6 +22,7 @@ public class Exercicio11 {
 			break;
 		}
 		System.out.println("aqui");
+		}
 		
 	}
 	

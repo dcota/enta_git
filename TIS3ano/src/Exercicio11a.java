@@ -11,7 +11,7 @@ public class Exercicio11a {
 	static String menu() {
 		String opc="";
 		Scanner op = new Scanner(System.in);
-		while (!checkOp(opc)) {
+		while (!validaOp(opc)) {
 			System.out.println("GESTÃO DE ALUNOS");
 			System.out.println("");
 			System.out.println("1 - Inscrever aluno");
@@ -19,12 +19,16 @@ public class Exercicio11a {
 			System.out.println("3 - Listar alunos");
 			System.out.print("Escolher opção: ");
 			opc = op.nextLine();
+			if(!validaOp(opc)) {
+				System.out.println("Opção inválida! Prima uma tecla para continuar...");
+				opc = op.nextLine();
+			}
 		}
 		op.close();
 		return opc;		
 	}
 	
-	static boolean checkOp(String op) {
+	static boolean validaOp(String op) {
 		/*boolean res = false;
 		if( op.compareTo("1") == 0 || op.compareTo("2") == 0 || op.compareTo("3") == 0) {
 			res = true;
