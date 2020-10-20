@@ -8,8 +8,8 @@ public class Exercicio3 {
 		double raio = input.nextDouble();
 		double area = Math.PI * Math.pow(raio, 2);
 		double perimetro = 2 * Math.PI * raio;
-		System.out.printf("O perimetro do circulo e: %.2f cm\n", perimetro);
-		System.out.printf("A area do circulo e: %.2f cm2\n", area);
+		System.out.printf("O perimetro do circulo é: %.2f cm\n", perimetro);
+		System.out.printf("A área do circulo é: %.2f cm2\n", area);
 		input.close();
 	}
 }

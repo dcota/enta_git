@@ -11,13 +11,13 @@ public class Exercicio1 {
 		long li = 823764825; //tipo long
 		final int constante = 55; //constante
 	
-		System.out.println("Variável do tipo integer: " + i);
-		System.out.println("Variável do tipo double: " + d);
-		System.out.println("Variável do tipo float " + f);
-		System.out.println("Variável do tipo char: " + c);
-		System.out.println("Variável do tipo String: " + s);
-		System.out.println("Variável do tipo boolean: " + b);
-		System.out.println("Variável do tipo long integer: " + li);
-		System.out.println("Variável do tipo constante: " + constante);
+		System.out.println("VariÃ¡vel do tipo integer: " + i);
+		System.out.println("VariÃ¡vel do tipo double: " + d);
+		System.out.println("VariÃ¡vel do tipo float " + f);
+		System.out.println("VariÃ¡vel do tipo char: " + c);
+		System.out.println("VariÃ¡vel do tipo String: " + s);
+		System.out.println("VariÃ¡vel do tipo boolean: " + b);
+		System.out.println("VariÃ¡vel do tipo long integer: " + li);
+		System.out.println("VariÃ¡vel do tipo constante: " + constante);
 	}
 }

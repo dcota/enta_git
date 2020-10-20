@@ -11,18 +11,18 @@ public class Exercicio11 {
 	public static void main(String[] args) {
 		
 		while(true) {
-		String op = menu();
-		switch(op) {
-		case "1":
-			criarAluno(checkFreeIndex());
-			break;
-		case "2":
-			break;
-		case "3":
-			break;
-		}
-		System.out.println("aqui");
-		}
+			String op = menu();
+			switch(op) {
+			case "1":
+				criarAluno(checkFreeIndex());
+				break;
+			case "2":
+				break;
+			case "3":
+				break;
+			}
+			System.out.println("aqui");
+			}
 		
 	}
 	
@@ -34,6 +34,10 @@ public class Exercicio11 {
 			System.out.println("1 - Inscrever aluno");
 			System.out.println("2 - Consultar aluno");
 			System.out.print("Escolher opção: ");
+			if(op.hasNextLine()) {
+				op.nextLine();
+				continue;
+			}
 			opc = op.nextLine();
 		}
 		return opc;

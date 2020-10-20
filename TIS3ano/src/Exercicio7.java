@@ -10,8 +10,10 @@ public class Exercicio7 {
         double b = input.nextDouble();
         System.out.print("Valor de c: ");
         double c = input.nextDouble();
+        
         //invoca metodo raizes e passa os argumentos a, b e c
         raizes(a,b,c);
+        
         input.close();
 	}
 	

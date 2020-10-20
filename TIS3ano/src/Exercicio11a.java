@@ -4,53 +4,57 @@ import java.util.*;
 public class Exercicio11a {
 
 	public static void main(String[] args) {
-		String op = menu();
-		System.out.println("Opção escolhida é: " + op);
+		boolean exit = true;
+		Scanner op = new Scanner(System.in);
+		while(exit) {
+			menu();
+			int escolha = -1;
+			if(!op.hasNextInt()) {
+				op.nextLine();
+				continue;
+			}
+			escolha = op.nextInt();
+			if(escolha < 1 || escolha > 4){
+				System.out.println("Escolha inválida, tente de novo...\n");
+				continue;
+			}
+			switch(escolha) {
+				case 1:
+					System.out.println("Opção escolhida é: " + escolha + "\n");
+					break;
+				case 2:
+					System.out.println("Opção escolhida é: " + escolha + "\n");
+					break;
+				case 3:
+					System.out.println("Opção escolhida é: " + escolha + "\n");
+					break;
+				case 4:
+					exit = false;
+					System.out.println("A terminar...");
+					break;
+				default:
+					break;
+			}
+		}	
 	}
 	
-	static String menu() {
-		String opc="";
-		Scanner op = new Scanner(System.in);
-		while (!validaOp(opc)) {
-			System.out.println("GESTÃO DE ALUNOS");
+	static void menu() {
+			System.out.println("");
+			System.out.println("********************");
+			System.out.println("* GESTÃO DE ALUNOS *");
+			System.out.println("********************");
 			System.out.println("");
 			System.out.println("1 - Inscrever aluno");
 			System.out.println("2 - Consultar aluno");
 			System.out.println("3 - Listar alunos");
-			System.out.print("Escolher opção: ");
-			opc = op.nextLine();
-			if(!validaOp(opc)) {
-				System.out.println("Opção inválida! Prima uma tecla para continuar...");
-				opc = op.nextLine();
-			}
-		}
-		op.close();
-		return opc;		
+			System.out.println("4 - Sair");
+			System.out.print("Escolher opção (1-4): ");	
 	}
 	
-	static boolean validaOp(String op) {
-		/*boolean res = false;
-		if( op.compareTo("1") == 0 || op.compareTo("2") == 0 || op.compareTo("3") == 0) {
-			res = true;
-		} 
-		return res;*/
-		switch(op) {
-		case "1":
-			return true;
-		case "2":
-			return true;
-		case "3":
-			return true;
-		default:
-			return false;
-		}
-	}
 	
 	//método para limpar a consola - não funciona no IDE
-	static void clear()
-    {
-        try
-        {
+	static void clear() {
+        try {
             if (System.getProperty("os.name").contains("Windows"))
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             else

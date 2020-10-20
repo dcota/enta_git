@@ -4,7 +4,7 @@ public class Exercicio8 {
 	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-        System.out.print("Valor de a: ");
+        System.out.print("Valor do número: ");
         int dec = input.nextInt();
 		binario(dec);
 		input.close();
