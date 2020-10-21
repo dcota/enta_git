@@ -48,6 +48,7 @@ public class Exercicio11b {
 	}
 	
 	static void menu() {
+			clear();
 			System.out.println("********************");
 			System.out.println("* GESTÃO DE ALUNOS *");
 			System.out.println("********************");
