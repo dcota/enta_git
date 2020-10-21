@@ -39,7 +39,6 @@ public class Exercicio11a {
 	}
 	
 	static void menu() {
-			System.out.println("");
 			System.out.println("********************");
 			System.out.println("* GESTÃO DE ALUNOS *");
 			System.out.println("********************");
@@ -51,7 +50,6 @@ public class Exercicio11a {
 			System.out.print("Escolher opção (1-4): ");	
 	}
 	
-	
 	//método para limpar a consola - não funciona no IDE
 	static void clear() {
         try {
@@ -61,6 +59,4 @@ public class Exercicio11a {
                 Runtime.getRuntime().exec("clear");
         } catch (IOException | InterruptedException ex) {}
     }
-
-
 }
