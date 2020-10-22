@@ -3,18 +3,18 @@ import java.util.*;
 
 public class Exercicio11d {
 	
-		private static int[] numAluno = new int[20];
-		private static String[] primNomeAluno = new String[20];
-		private static String[] ultNomeAluno = new String[20];
-		private static int[] idade = new int[20];
-		private static String[] freguesia= new String[20];
-		private static String[] concelho= new String[20];
+	private static int[] numAluno = new int[20];
+	private static String[] primNomeAluno = new String[20];
+	private static String[] ultNomeAluno = new String[20];
+	private static int[] idade = new int[20];
+	private static String[] freguesia= new String[20];
+	private static String[] concelho= new String[20];
 		
-		static Scanner op = new Scanner(System.in);
-		
-		public static void main(String[] args) {
+	static Scanner op = new Scanner(System.in);
+	
+	public static void main(String[] args) {
 		boolean exit = true;
-		
+			
 		while(exit) {
 			menu();
 			int escolha = -1;
@@ -29,18 +29,18 @@ public class Exercicio11d {
 			}
 			switch(escolha) {
 				case 1:
-					criarAluno();
+					criarAluno(); //Exercicio 11b
 					break;
 				case 2:
 					if(numAluno[0] != 0) {
-						consultarAluno();
+						consultarAluno(); //Exercicio 11c
 						break;
 					} else {
 						System.out.println("Não há alunos para consulta...");
 						break;
 					}
 				case 3:
-					printAlunos();
+					printAlunos(); //Exercicio 11d
 					break;
 				case 4:
 					exit = false;
@@ -53,17 +53,16 @@ public class Exercicio11d {
 	}
 	
 	static void menu() {
-			System.out.println("********************");
-			System.out.println("* GESTÃO DE ALUNOS *");
-			System.out.println("********************");
-			System.out.println("");
-			System.out.println("1 - Inscrever aluno");
-			System.out.println("2 - Consultar aluno");
-			System.out.println("3 - Listar alunos");
-			System.out.println("4 - Sair");
-			System.out.print("Escolher opção (1-4): ");	
-	}
-	
+		System.out.println("********************");
+		System.out.println("* GESTÃO DE ALUNOS *");
+		System.out.println("********************");
+		System.out.println("");
+		System.out.println("1 - Inscrever aluno");
+		System.out.println("2 - Consultar aluno");
+		System.out.println("3 - Listar alunos");
+		System.out.println("4 - Sair");
+		System.out.print("Escolher opção (1-4): ");	
+	}	
 	static void criarAluno() {
 		boolean exit = true;
 		Scanner esc = new Scanner(System.in);
@@ -145,14 +144,46 @@ public class Exercicio11d {
 		return index;
 	}
 	
-	static void printAlunos() {
+	static void printAlunos() {		
 		System.out.println(
-			"+-----+----------------------------+-------+-------------------+------------------------+\n" +
-			"| Nº  |            NOME            | IDADE |     FREGUESIA     |        CONCELHO        |\n" +
-			"+-----+----------------------------+-------+-------------------+------------------------+\n" );
+			"+-----+----------------------------------+-------+---------------------------+--------------------------------+\n" +
+			"| Nº  |               NOME               | IDADE |         FREGUESIA         |            CONCELHO            |\n" +
+			"+-----+----------------------------------+-------+---------------------------+--------------------------------+" );
+		
+		int index = 0;
+		while( numAluno[index] != 0) {
+			System.out.print("|");
+			System.out.print(" " + numAluno[index]);
+			for(int i=0; i <  4 - Integer.toString(numAluno[index]).length(); i++) {
+				System.out.print(" ");
+			}
+			System.out.print("|");
+			System.out.print(primNomeAluno[index] + " " + ultNomeAluno[index]);
+			for(int i=0; i <  34 - (primNomeAluno[index].length() + ultNomeAluno[index].length() + 1); i++) {
+				System.out.print(" ");
+			}
+			System.out.print("|");
+			System.out.print(" " + idade[index]);
+			for(int i=0; i <  6 - Integer.toString(idade[index]).length(); i++) {
+				System.out.print(" ");
+			}
+			System.out.print("|");
+			System.out.print(freguesia[index]);
+			for(int i=0; i <  27 - freguesia[index].length(); i++) {
+				System.out.print(" ");
+			}
+			System.out.print("|");
+			System.out.print(concelho[index]);
+			for(int i=0; i <  32 - concelho[index].length(); i++) {
+				System.out.print(" ");
+			}
+			System.out.print("|\n");
+			index++;
+		}
+		System.out.println(
+				"+-----+----------------------------------+-------+---------------------------+--------------------------------+\n");
 	}
 	
-
 	
 	//método para limpar a consola - não funciona no IDE
 	static void clear() {
@@ -163,6 +194,4 @@ public class Exercicio11d {
                 Runtime.getRuntime().exec("clear");
         } catch (IOException | InterruptedException ex) {}
     }
-
-
 }
