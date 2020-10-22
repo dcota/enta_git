@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.*;
 
-public class Exercicio11b {
+public class Exercicio11d {
 	
 		private static int[] numAluno = new int[20];
 		private static String[] primNomeAluno = new String[20];
@@ -32,10 +32,15 @@ public class Exercicio11b {
 					criarAluno();
 					break;
 				case 2:
-					System.out.println("Opção escolhida é: " + escolha + "\n");
-					break;
+					if(numAluno[0] != 0) {
+						consultarAluno();
+						break;
+					} else {
+						System.out.println("Não há alunos para consulta...");
+						break;
+					}
 				case 3:
-					System.out.println("Opção escolhida é: " + escolha + "\n");
+					printAlunos();
 					break;
 				case 4:
 					exit = false;
@@ -62,8 +67,8 @@ public class Exercicio11b {
 	static void criarAluno() {
 		boolean exit = true;
 		Scanner esc = new Scanner(System.in);
-		int escolha;
 		while(exit) {
+			int escolha=0;
 			int index = getFreeIndex();
 			numAluno[index] = index + 1;
 			System.out.print("Primeiro nome: ");
@@ -89,6 +94,42 @@ public class Exercicio11b {
 			case 2:
 				exit = false;
 				break;
+			default:
+				break;
+			}
+		}
+	}
+	
+	static void consultarAluno() {
+		boolean exit = true;
+		Scanner esc = new Scanner(System.in);
+		int nAluno;
+		while(exit) {
+			int escolha=0;
+			System.out.print("Introduzir o número do aluno: ");
+			nAluno = esc.nextInt();
+			esc.nextLine();
+			int index = nAluno-1;
+			if(numAluno[index] != 0) {
+				System.out.println("Aluno n.: " + nAluno);
+				System.out.println("Nome do aluno: " + primNomeAluno[index] + " " + ultNomeAluno[index]);
+				System.out.println("Idade: " + idade[index]);
+				System.out.println("Freguesia de residência: " + freguesia[index]);
+				System.out.println("Concelho de residência: " + concelho[index]);
+			} else {
+				System.out.println("Aluno inexistente...");
+			}
+			System.out.print("Consultar outro aluno? 1-Repetir ; 2 - Sair");
+			escolha=esc.nextInt();
+			esc.nextLine();
+			switch(escolha) {
+			case 1:
+				break;
+			case 2:
+				exit = false;
+				break;
+			default:
+				break;
 			}
 		}
 	}
@@ -104,6 +145,14 @@ public class Exercicio11b {
 		return index;
 	}
 	
+	static void printAlunos() {
+		System.out.println(
+			"+-----+----------------------------+-------+-------------------+------------------------+\n" +
+			"| Nº  |            NOME            | IDADE |     FREGUESIA     |        CONCELHO        |\n" +
+			"+-----+----------------------------+-------+-------------------+------------------------+\n" );
+	}
+	
+
 	
 	//método para limpar a consola - não funciona no IDE
 	static void clear() {
