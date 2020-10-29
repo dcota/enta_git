@@ -2,14 +2,19 @@ import java.util.Scanner;
 
 public class Exercicio5 {
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in); //passo1
-		System.out.print("Introduza um numero: ");//passo1
-		int num = input.nextInt();//passo1
-		int resto = num % 2; //passo2
-		if( resto == 0) { //passo2
-			System.out.println("O numero e PAR"); //passo3
-		} else {
-			System.out.println("O numero e IMPAR"); //passo3
+		Scanner input = new Scanner(System.in);
+		System.out.print("Numero?: ");
+		int num = input.nextInt();
+		if ( num >= -100 ) {
+			if( num <= 100){
+				System.out.println("DENTRO");
+			}
+			else {
+				System.out.println("FORA");
+			}
+		}
+		else {
+			System.out.println("FORA");
 		}
 		input.close();
 	}

@@ -1,0 +1,4 @@
+1;Duarte;Cota;51;S.Pedro;Ponta Delgada
+2;Carlos;Santos;23;São Roque;Ponta Delgada
+3;Jorge;Fonseca;24;Ribeira Seca;Ribeira Grande
+4;Sandra;Machado;20;Cabouco;Lagoa
