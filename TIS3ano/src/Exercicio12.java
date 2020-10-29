@@ -14,6 +14,7 @@ public class Exercicio12 {
 	
 	public static void main(String[] args) {
 		boolean exit = true;
+		//se existir ficheiro processa o ficheiro
 		if (existeFicheiro("dados.txt")) {
 			processaFicheiro("dados.txt");
 		}
