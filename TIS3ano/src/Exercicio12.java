@@ -108,6 +108,7 @@ public class Exercicio12 {
 				break;
 			}
 		}
+		esc.close();
 	}
 	
 	static void consultarAluno() {
@@ -142,6 +143,7 @@ public class Exercicio12 {
 				break;
 			}
 		}
+		esc.close();
 	}
 	
 	static int getFreeIndex() {

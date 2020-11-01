@@ -11,7 +11,7 @@ public class Exercicio5 {
 		input.close();
 	}
 
-	static String parImpar(int n) {
+	public static String parImpar(int n) {
 		if( n % 2 == 0)
 			return "PAR";
 		else

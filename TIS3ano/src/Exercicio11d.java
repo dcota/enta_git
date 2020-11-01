@@ -3,18 +3,19 @@ import java.util.*;
 
 public class Exercicio11d {
 	
+	//declarar a estrutura de dados
 	private static int[] numAluno = new int[20];
 	private static String[] primNomeAluno = new String[20];
 	private static String[] ultNomeAluno = new String[20];
 	private static int[] idade = new int[20];
 	private static String[] freguesia= new String[20];
 	private static String[] concelho= new String[20];
-		
+	
 	static Scanner op = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		boolean exit = true;
-			
+		//enquanto exit for verdade repetir o programa
 		while(exit) {
 			menu();
 			int escolha = -1;
@@ -52,6 +53,7 @@ public class Exercicio11d {
 		}	
 	}
 	
+	//método para gerar o menu
 	static void menu() {
 		System.out.println("********************");
 		System.out.println("* GESTÃO DE ALUNOS *");
@@ -62,7 +64,9 @@ public class Exercicio11d {
 		System.out.println("3 - Listar alunos");
 		System.out.println("4 - Sair");
 		System.out.print("Escolher opção (1-4): ");	
-	}	
+	}
+	
+	//registar um novo aluno
 	static void criarAluno() {
 		boolean exit = true;
 		Scanner esc = new Scanner(System.in);
@@ -97,8 +101,10 @@ public class Exercicio11d {
 				break;
 			}
 		}
+		esc.close();
 	}
 	
+	//consultar os dados de um aluno pelo número de aluno
 	static void consultarAluno() {
 		boolean exit = true;
 		Scanner esc = new Scanner(System.in);
@@ -131,8 +137,10 @@ public class Exercicio11d {
 				break;
 			}
 		}
+		esc.close();
 	}
 	
+	//procurar índice disponível
 	static int getFreeIndex() {
 		int index = 0;
 		for(int i=0;i<numAluno.length;i++) {
@@ -144,6 +152,7 @@ public class Exercicio11d {
 		return index;
 	}
 	
+	//mostrar tabela com todos os alunos
 	static void printAlunos() {		
 		System.out.println(
 			"+-----+----------------------------------+-------+---------------------------+--------------------------------+\n" +
@@ -185,7 +194,7 @@ public class Exercicio11d {
 	}
 	
 	
-	//método para limpar a consola - não funciona no IDE
+	//limpar a consola - não funciona no IDE
 	static void clear() {
         try {
             if (System.getProperty("os.name").contains("Windows"))

@@ -10,14 +10,11 @@ public class Exercicio7 {
         double b = input.nextDouble();
         System.out.print("Valor de c: ");
         double c = input.nextDouble();
-        
         //invoca metodo raizes e passa os argumentos a, b e c
         raizes(a,b,c);
-        
         input.close();
 	}
-	
-	static void raizes (double a, double b, double c) {
+	public static void raizes (double a, double b, double c) {
 		String df = "0.00";
 	  	DecimalFormat decf = new DecimalFormat(df);
 	  	//calculo intermedio do radicando
@@ -34,3 +31,4 @@ public class Exercicio7 {
         }
 	}
 }
+
