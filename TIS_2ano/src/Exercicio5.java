@@ -5,13 +5,8 @@ public class Exercicio5 {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Numero?: ");
 		int num = input.nextInt();
-		if ( num >= -100 ) {
-			if( num <= 100){
-				System.out.println("DENTRO");
-			}
-			else {
-				System.out.println("FORA");
-			}
+		if ( num >= -100 && num <= 100 ) {
+			System.out.println("DENTRO");
 		}
 		else {
 			System.out.println("FORA");
