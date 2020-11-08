@@ -5,8 +5,8 @@ public class Exercicio3 {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Qual o raio do circulo em cm?: ");
 		double raio = input.nextDouble();
-		double area = 3.14 * (raio*raio);
-		double perimetro = 2 * 3.14 * raio;
+		double area = Math.PI * Math.pow(raio,2);
+		double perimetro = 2 * Math.PI * raio;
 		System.out.printf("O perimetro do circulo e: %.2f cm\n", perimetro);
 		System.out.printf("A area do circulo e: %.2f cm2\n", area);
 		input.close();

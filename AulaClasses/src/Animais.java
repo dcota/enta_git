@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import animal.*;
 
 public class Animais {
 
