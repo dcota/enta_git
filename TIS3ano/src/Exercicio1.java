@@ -32,10 +32,12 @@ public class Exercicio1 {
 		Scanner input = new Scanner(System.in);
 		int soma=0;
 		double media=0;
-		for(int i=0; i<5; i++) {
+		int i=0;
+		while( i<5) {
 			System.out.print("Numero "+ (i+1) + ":");
 			int num = input.nextInt();
 			soma += num;
+			i++;
 		}
 		media = (double)soma/5;
 		System.out.println("");

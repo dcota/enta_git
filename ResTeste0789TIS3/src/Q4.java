@@ -16,6 +16,7 @@ public class Q4 {
 						nDia = in.nextInt();
 					}
 					System.out.println("O dia da semana é: " + diaSemana(nDia));
+					System.out.println("\n");
 				} catch(InputMismatchException e ) {
 					System.out.println("Número inválido! Tente de novo...");
 				}
