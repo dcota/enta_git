@@ -16,7 +16,12 @@ public class GestaoAnimais {
 		animais.add(anim2);
 		animais.add(anim3);
 		
-		animais.get(0).setNome("Leo");
+		for(int i=0 ; i<animais.size() ; i++) {
+			System.out.println(animais.get(i).getNome());
+			System.out.println(animais.get(i).getPeso());
+		}
+		
+		animais.get(0).setPeso(20.0);
 		
 		for(int i=0 ; i<animais.size() ; i++) {
 			System.out.println(animais.get(i).getNome());

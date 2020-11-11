@@ -6,7 +6,7 @@ public class Animal {
 	private String nomeAnimal;
 	private int idadeAnimal;
 	
-	//contructor
+	//contrutor
 	public Animal(String tipo, String raca, String nome, int idade) {
 		this.tipoAnimal = tipo;
 		this.racaAnimal = raca;
