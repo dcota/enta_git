@@ -3,26 +3,23 @@ import java.util.Scanner;
 public class ResAula{
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
-        int n1, n2, n3;
-        System.out.print("Num1?: ");
-        n1 = in.nextInt();
-        System.out.print("Num2?: ");
-        n2 = in.nextInt();
-        System.out.print("Num3?: ");
-        n3 = in.nextInt();
-        int min = minimo(n1,n2,n3);
-        System.out.println("Valor minimo: " + min);
-        in.close();
+        System.out.print("Introduza frase: ");
+        String str = in.nextLine();
+        System.out.println("Numero de vogais = " + contaVog(str));
     }
 
-    public static int minimo(int n1, int n2, int n3) {
-        int min;
-        min = n1;
-        if (n2 < min){
-            min = n2;
-        } else if (n3 < min){
-            min = n3;
+    static int contaVog(String str){
+        String strLower = str.toLowerCase();
+        int contaVogais=0;
+        int compStr = strLower.length();
+        for(int i=0; i<compStr; i++){
+            char c = strLower.charAt(i);
+            if(c=='a' || c=='e' || c=='i'|| c=='o' || c=='u'){
+                contaVogais++;
+            }  
         }
-        return min;
-    }
+        return contaVogais;
+    } 
+
+    
 }
