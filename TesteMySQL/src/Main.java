@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		Connection conn = getConnection();
-		String sql = "INSERT INTO costumer (firstname, lastname) VALUES (?, ?)";
+		/*String sql = "INSERT INTO costumers (firstname, lastname) VALUES (?, ?)";
 		PreparedStatement statement = conn.prepareStatement(sql);
 		statement.setString(1, "Ana");
 		statement.setString(2, "Cota");
@@ -18,9 +18,9 @@ public class Main {
 		if(rows > 0) {
 			System.out.println("Linha adicionada");
 		}
-		statement.close();
+		statement.close();*/
 		
-		String sql1 = "SELECT * FROM costumer WHERE lastname LIKE \"Cota\"";
+		String sql1 = "SELECT * FROM costumers WHERE lastname LIKE \"Cota\"";
 		Statement statement1 = conn.createStatement();
 		ResultSet result = statement1.executeQuery(sql1);
 		int count = 0;
