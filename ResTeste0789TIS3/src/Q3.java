@@ -15,3 +15,19 @@ public class Q3 {
 		System.out.println("]\n");
 	}
 }
+
+/*public class Q3 {
+    public static void main(String[] args) {        
+        checkDiv5(30);    
+    }
+
+    static void checkDiv5(int n) {    
+        System.out.print(" [ "); 
+        for(int i = 0; i <= n; i++) {          
+            if(i % 5 == 0 && i != 0 && i != n) {                
+                System.out.print(i + " , ");       
+            }   
+        }       
+        System.out.print(n + " ] ");    
+    } 
+}*/

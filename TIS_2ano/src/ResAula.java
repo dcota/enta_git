@@ -2,24 +2,18 @@ import java.util.Scanner;
 
 public class ResAula{
     public static void main(String[] args){
+        String[] nomes={"Carlos", "Bernardo", "Paulo", "Marcelo", "David"};
         Scanner in = new Scanner(System.in);
-        System.out.print("Introduza frase: ");
+        System.out.print("Introduza nome: ");
         String str = in.nextLine();
-        System.out.println("Numero de vogais = " + contaVog(str));
+        verificaNome(nomes,str);
+                
     }
 
-    static int contaVog(String str){
-        String strLower = str.toLowerCase();
-        int contaVogais=0;
-        int compStr = strLower.length();
-        for(int i=0; i<compStr; i++){
-            char c = strLower.charAt(i);
-            if(c=='a' || c=='e' || c=='i'|| c=='o' || c=='u'){
-                contaVogais++;
-            }  
-        }
-        return contaVogais;
-    } 
+    public static boolean verificaNome(String[] nomes, String str){
+        boolean resultado = false;
 
-    
+        return resultado;
+    }
+   
 }
