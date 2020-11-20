@@ -15,20 +15,23 @@ public class Exercicio7 {
         input.close();
 	}
 	public static void raizes (double a, double b, double c) {
-		String df = "0.00";
-	  	DecimalFormat decf = new DecimalFormat(df);
-	  	//calculo intermedio do radicando
-        double radicando = Math.pow(b, 2) - 4.0 * a * c;
-        if(radicando < 0) {
-        	System.out.println("A equacao ao tem raizes!");
-        } else if (radicando == 0) {
-        	double r1 = -b / (2.0*a);
-        	System.out.println("A equacao tem uma raiz. O seu valor e: " + decf.format(r1));        	
-        } else {
-        	double r1 = (-b + Math.sqrt(radicando)) / (2.0*a);
-        	double r2 = (-b - Math.sqrt(radicando)) / (2.0*a);
-        	System.out.println("A equacao tem duas raizes: R1 =  " + decf.format(r1) + " ; R2 = " + decf.format(r2));
-        }
+		if(a == 0) {
+			System.out.println("Equação inválida...");
+		} else {
+			String df = "0.00";
+		  	DecimalFormat decf = new DecimalFormat(df);
+		  	//calculo intermedio do radicando
+	        double radicando = Math.pow(b, 2) - 4.0 * a * c;
+	        if(radicando < 0) {
+	        	System.out.println("A equacao ao tem raizes!");
+	        } else if (radicando == 0) {
+	        	double r1 = -b / (2.0*a);
+	        	System.out.println("A equacao tem uma raiz. O seu valor e: " + decf.format(r1));        	
+	        } else {
+	        	double r1 = (-b + Math.sqrt(radicando)) / (2.0*a);
+	        	double r2 = (-b - Math.sqrt(radicando)) / (2.0*a);
+	        	System.out.println("A equacao tem duas raizes: R1 =  " + decf.format(r1) + " ; R2 = " + decf.format(r2));
+	        }
+		}
 	}
 }
-
