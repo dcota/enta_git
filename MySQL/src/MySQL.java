@@ -11,7 +11,7 @@ import java.sql.Statement;
 import java.util.Properties;
 import java.util.TimeZone;
 
-public class Main {
+public class MySQL {
 
 	public static void main(String[] args) throws Exception {
 		
@@ -20,7 +20,7 @@ public class Main {
 		
 		//métodos para teste
 		createRow(conn);
-		querySample(conn);
+		//querySample(conn);
 		//deleteExample(conn);
 		
 		//criar ficheiro propriedades
@@ -52,12 +52,15 @@ public class Main {
 		return null;
 	}
 	
+	
 	public static void createRow(Connection conn) {
 		try {
+			String fn="Mário";
+			String ln = "Borges";
 			String sql = "INSERT INTO costumers (firstname, lastname) VALUES (?, ?)";
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, "Mário");
-			statement.setString(2, "Borges");
+			statement.setString(1, fn);
+			statement.setString(2, ln);
 			int rows = statement.executeUpdate();
 			if(rows > 0) {
 				System.out.println("Linha adicionada");
@@ -66,7 +69,6 @@ public class Main {
 		} catch (SQLException e) {
 
 		}
-		
 	}
 	
 	public static void querySample(Connection conn) {
