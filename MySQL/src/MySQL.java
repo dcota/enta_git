@@ -20,7 +20,7 @@ public class MySQL {
 		
 		//métodos para teste
 		createRow(conn);
-		//querySample(conn);
+		querySample(conn);
 		//deleteExample(conn);
 		
 		//criar ficheiro propriedades

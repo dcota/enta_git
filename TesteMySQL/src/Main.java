@@ -19,8 +19,8 @@ public class Main {
 		Connection conn = getConnection(p);
 		
 		//métodos para teste
-		createRow(conn);
-		querySample(conn);
+		//createRow(conn);
+		querySample(conn,"TEAC");
 		//deleteExample(conn);
 		
 		//criar ficheiro propriedades
@@ -54,10 +54,12 @@ public class Main {
 	
 	public static void createRow(Connection conn) {
 		try {
-			String sql = "INSERT INTO costumers (firstname, lastname) VALUES (?, ?)";
+			String sql = "INSERT INTO costumers (firstname, lastname, idTurma) VALUES (?, ?, ?)";
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, "Mário");
-			statement.setString(2, "Borges");
+			statement.setString(1, "Eva");
+			statement.setString(2, "Garcia");
+			statement.setInt(3, 3);
+			
 			int rows = statement.executeUpdate();
 			if(rows > 0) {
 				System.out.println("Linha adicionada");
@@ -69,17 +71,18 @@ public class Main {
 		
 	}
 	
-	public static void querySample(Connection conn) {
+	public static void querySample(Connection conn, String curso) {
 		try {
-			String sql1 = "SELECT firstname,lastname FROM costumers ";
+			String sql1 = "SELECT firstname,lastname,curso FROM costumers,turmas WHERE costumers.idTurma=turmas.idTurma AND curso='" + curso +"'";
 			Statement statement1 = conn.createStatement();
 			ResultSet result = statement1.executeQuery(sql1);
 			int count = 0;
 			while(result.next()) {
 				String fn = result.getString("firstname");
 				String ln = result.getString("lastname");
+				String c = result.getString("curso");
 				count++;
-				System.out.println("Costumer " + count + ": " + fn + " " + ln);
+				System.out.println("Costumer " + count + ": " + fn + " " + ln + " " + c);
 			}
 			statement1.close();
 		} catch (SQLException e) {
