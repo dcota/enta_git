@@ -33,6 +33,8 @@ public class GesAlunos {
 		Turma turmaA = new Turma("A",tA);
 		Turma turmaB = new Turma("B",tB);
 		
+		//para contagem e listagem de alunos menores
+		System.out.println("ALUNOS MENORES");
 		System.out.println("Total de alunos menores da turma A: " + contaMenores(turmaA) );
 		System.out.println("Nomes dos alunos:");
 		listaNomesMenores(turmaA);
@@ -40,6 +42,16 @@ public class GesAlunos {
 		System.out.println("Total de alunos menores da turma B: " + contaMenores(turmaB) );
 		System.out.println("Nomes dos alunos:");
 		listaNomesMenores(turmaB);
+		
+		//para contagem e listagem de alunos com media >=10	
+		System.out.println("\n" + "ALUNOS COM MÉDIA >=10");
+		System.out.println("Total de alunos da turma A com media positiva: " + contaMediaPos(turmaA) );
+		System.out.println("Nomes dos alunos:");
+		listaNomesMediaPos(turmaA);
+		
+		System.out.println("Total de alunos da turma B com media positiva: " + contaMediaPos(turmaB) );
+		System.out.println("Nomes dos alunos:");
+		listaNomesMediaPos(turmaB);
 	}
 	
 	public static int contaMenores(Turma turma) {
@@ -55,7 +67,7 @@ public class GesAlunos {
 	public static int contaMediaPos(Turma turma) {
 		int contaMediaPos=0;
 		for(int i=0; i<turma.getAlunosTurma().size();i++) {
-			if(turma.getAlunosTurma().get(i).getIdade()<18) {
+			if(turma.getAlunosTurma().get(i).getMedia()>=10.0) {
 				contaMediaPos++;
 			}
 		}
@@ -72,7 +84,7 @@ public class GesAlunos {
 	
 	public static void listaNomesMediaPos(Turma turma) {
 		for(int i=0; i<turma.getAlunosTurma().size();i++) {
-			if(turma.getAlunosTurma().get(i).getIdade()>=10) {
+			if(turma.getAlunosTurma().get(i).getMedia()>=10.0) {
 				System.out.println(turma.getAlunosTurma().get(i).getNome());
 			}
 		}
