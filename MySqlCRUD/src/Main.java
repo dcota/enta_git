@@ -20,6 +20,7 @@ public class Main {
 		System.out.println("Cidade com maior população: " + maxPop);
 		String minPop = minPop(consulta);
 		System.out.println("Cidade com menor população: " + minPop);
+		
 	}
 
 	// método que retorna o nome da cidade com maior população
@@ -85,9 +86,8 @@ public class Main {
 		}
 
 	}
-
-	// método que executa a consulta na base de dados e retorna objeto do tipo
-	// ResultSet
+	
+	// método que executa a consulta na base de dados e retorna objeto do tipo ResultSet
 	public static ResultSet consulta(Connection connection) {
 		try {
 			String frase = "SELECT name,population FROM city WHERE CountryCode LIKE 'PRT'";
