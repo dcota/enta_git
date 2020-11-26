@@ -103,7 +103,6 @@ public class Main {
 
 	public static Connection myConnection(Properties p) throws Exception {
 		try {
-
 			InputStream input = new FileInputStream("dbConfig.properties");
 			p.load(input);
 			Connection connection = DriverManager.getConnection(p.getProperty("url"), p.getProperty("username"),
