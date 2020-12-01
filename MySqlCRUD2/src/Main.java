@@ -63,7 +63,6 @@ public class Main {
 			p.load(input);
 			Connection connection = DriverManager.getConnection(p.getProperty("url"), p.getProperty("username"),
 					p.getProperty("password"));
-			System.out.println("Ligado...");
 			return connection;
 		} catch (FileNotFoundException e) {
 			System.out.println("Ficheiro não encontrado...");
