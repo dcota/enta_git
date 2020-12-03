@@ -81,8 +81,8 @@ public class Main {
 		idTurmas(); //mostrar a lista de turmas com id's, disponível na based de dados
 		System.out.print("Inserir o ID da turma para este aluno: ");
 		int idTurma = in.nextInt();
-		novoAluno.setFirstname(firstname);
-		novoAluno.setLastname(lastname);
+		novoAluno.setPrimNome(firstname);
+		novoAluno.setUltNome(lastname);
 		novoAluno.setIdade(idade);
 		novoAluno.setIdTurma(idTurma);
 		return novoAluno;
@@ -112,8 +112,8 @@ public class Main {
 		String sql = "INSERT INTO Alunos (primNome,ultNome,idade,idTurma) VALUES (?,?,?,?)";
 		try {
 			PreparedStatement stm = conn.prepareStatement(sql);
-			stm.setString(1, novoAluno.getFirstname());
-			stm.setString(2, novoAluno.getLastname());
+			stm.setString(1, novoAluno.getPrimNome());
+			stm.setString(2, novoAluno.getUltNome());
 			stm.setInt(3, novoAluno.getIdade());
 			stm.setInt(4, novoAluno.getIdTurma());
 
