@@ -157,7 +157,6 @@ public class Main {
 		try {
 			String query = "SELECT * FROM Turmas";
 			Statement stm = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-			// stm.setFetchSize(1);
 			ResultSet resultado = stm.executeQuery(query);
 			System.out.println("Turmas disponíveis:");
 			if (!resultado.next()) {

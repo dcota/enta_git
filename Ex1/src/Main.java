@@ -4,7 +4,9 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.InputMismatchException;
 import java.util.Properties;
 import java.util.Scanner;
@@ -27,7 +29,7 @@ public class Main {
 				inserirTurma(novaTurma);
 				break;
 			case 2:
-				//realizar tarefa
+				Aluno novoAluno = criarAluno();
 				break;
 			case 3:
 				//realizar tarefa
@@ -80,6 +82,25 @@ public class Main {
 		//retornar o objeto da classe turma
 		return novaTurma;
 	}
+	
+	//método para criar um aluno
+		public static Aluno criarAluno() {	
+			Scanner in = new Scanner(System.in);
+			//pedir dados ao utilizador
+			System.out.print("Introduzir o primeiro nome: ");
+			String primNome= in.nextLine();
+			System.out.print("Introduzir o último nome:");
+			String ultNome = in.nextLine();
+			System.out.print("Introduzir a idade:");
+			int idade = in.nextInt();
+			listarTurmasTodas();
+			System.out.print("Introduzir a turma (ID) para este aluno:");
+			int idTurma = in.nextInt();
+			//criar o objeto da classe aluno com os dados introduzidos
+			Aluno novoAluno = new Aluno(primNome,ultNome,idade,idTurma);	
+			//retornar o objeto da classe turma
+			return novoAluno;
+		}
 
 	//método para criar uma turma
 	public static void inserirTurma(Turma novaTurma) {	
@@ -96,10 +117,31 @@ public class Main {
 				System.out.println("Turma criada com sucesso!");
 			} else {
 				System.out.println("Algo correu mal...");
-			}
-			
+			}		
 		} catch (SQLException e) {
 			System.out.println("Ocorreu um erro...");
+			e.printStackTrace();
+		}
+	}
+	
+	//método para listar todas as turmas disponíveis na bd
+	public static void listarTurmasTodas() {
+		try {
+		String sql = "SELECT * FROM Turmas";
+		Statement stm = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet resultado = stm.executeQuery(sql);
+		if(!resultado.next()) {
+			System.out.println("Não há turmas disponíveis...");
+		}else {
+			resultado.beforeFirst();
+			while(resultado.next()) {
+				int idTurma=resultado.getInt("idTurma");
+				String curso=resultado.getString("curso");
+				int anoCurso=resultado.getInt("anoCurso");
+				System.out.println("ID Turma: " + idTurma + " Curso: " + curso + "Ano: " + anoCurso);
+			}
+		}
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
