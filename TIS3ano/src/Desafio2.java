@@ -26,5 +26,4 @@ public class Desafio2 {
 		}
 		System.out.println("Torres especiais: " + especiais);
 	}
-
 }

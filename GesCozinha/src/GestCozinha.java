@@ -24,6 +24,16 @@ public class GestCozinha {
 		arroz_tomate.add(new Ingrediente(1.0, "Kg", "Cebola branca"));
 		arroz_tomate.add(new Ingrediente(1.0, "Lt", "Azeite virgem"));
 		arroz_tomate.add(new Ingrediente(1.0, "Kg", "Tomate"));
+		
+		/*for(int i=0; i<stockCozinha.size(); i++) {
+			//procura o objeto com nome Tomate
+			if (stockCozinha.get(i).getNome()=="Tomate") {
+				double novaQtd = stockCozinha.get(i).getQtd() + 5; //calcula a nova quantidade
+				stockCozinha.get(i).setQtd(novaQtd); //atualiza nova quantidade no objeto com o nome Tomate
+				System.out.println(stockCozinha.get(i).getQtd());
+			}
+		}*/
+		
 
 		// invocar método que verifica quantidades necessárias
 		// neste exemplo verifica se há ingredientes para fazer 5 doses de arroz de tomate
