@@ -37,7 +37,7 @@ public class Main {
 				listarTurmasTodas();
 				break;
 			case 4:
-				// realizar tarefa
+				mostrarAlunosTurma();
 				break;
 			case 5:
 				sair = true;
@@ -99,8 +99,6 @@ public class Main {
 			listarTurmasTodas();
 			System.out.print("Introduzir a turma (ID) para este aluno:");
 			int idTurma = in.nextInt();
-			//veririficar a validade do ID introduzido
-			
 			// criar o objeto da classe aluno com os dados introduzidos
 			Aluno novoAluno = new Aluno(primNome, ultNome, idade, idTurma);
 			// retornar o objeto da classe turma
@@ -151,8 +149,8 @@ public class Main {
 				System.out.println("Algo correu mal...");
 			}
 		} catch (SQLException e) {
-			System.out.println("Ocorreu um erro...");
-			e.printStackTrace();
+			System.out.println("Não possivel inserir aluno. Verifique os dados do aluno.");
+			criarAluno();
 		}
 	}
 
@@ -176,6 +174,34 @@ public class Main {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	//método para mostrar alunos de uma turma
+	public static void mostrarAlunosTurma() {
+		Scanner in = new Scanner(System.in);
+		// pedir dados ao utilizador
+		try {
+			listarTurmasTodas();
+			System.out.print("Introduzir o ID da turma: ");
+			int idTurma = in.nextInt();
+			String sql = "SELECT * FROM Alunos WHERE idTurma=" + idTurma;
+			Statement stm = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			ResultSet resultado = stm.executeQuery(sql);
+			if (!resultado.next()) {
+				System.out.println("Não há alunos na turma...");
+			} else {
+				resultado.beforeFirst();
+				while (resultado.next()) {
+					String primNome = resultado.getString("primNome");
+					String ultNome = resultado.getString("ultNome");
+					int idade = resultado.getInt("idade");
+					System.out.println("Aluno: " + primNome + " " + ultNome + " | Idade: " + idade);
+				}
+			}
+		} catch (SQLException |InputMismatchException e) {
+			
+		}
+			
 	}
 
 	// método para fazer a ligação à base de dados
