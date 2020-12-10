@@ -1,46 +1,33 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Aula_ArrayList {
-    public static void main(String[] args) throws FileNotFoundException {
-        //array estático
-        /*String[] nomes2 = new String[6];
-        for(int i = 0; i<nomes2.length ; i++){
-            System.out.println(nomes2[i]);
+    public static void main(String[] args) {
+        ArrayList<Integer> lista = new ArrayList<Integer>();
+        int tamanhoLista = lista.size();
+        System.out.println("Dimensão da lista: " + tamanhoLista);
+        lista.add(3);
+        lista.add(34);
+        lista.add(54);
+        lista.add(6);
+        lista.add(78);
+        tamanhoLista = lista.size();
+        System.out.println("Dimensão da nova lista: " + tamanhoLista);
+        mostraLista(lista);
+        System.out.println("Soma:" + somaLista(lista));
+    }
+
+    public static void mostraLista(ArrayList<Integer> lista){
+        for(int i=0; i<lista.size() ; i++){
+            System.out.print(lista.get(i) + " ; ");
         }
-        System.out.println("\n");
-        nomes2[1] = "Marco";
-        for(int i = 0; i<nomes2.length ; i++){
-            System.out.println(nomes2[i]);
-        }*/
+    }
 
-        //array dinâmico
-        Scanner scanCMD = new Scanner(System.in); //criar scanner
-        ArrayList<Integer> numeros = new ArrayList<Integer>(); //criar lista/array
-
-        int tamanhoArrayList = numeros.size();//determinar o tamanho da lista
-        System.out.println("Tamanho do ArrayList: " + tamanhoArrayList);//mostrar o tamanho da lista
-
-        numeros.add(4); //adicionar o número 4 à lista numeros
-        numeros.add(8); //adicionar o número 8 à lista numeros
-        numeros.add(2); //adicionar o número 2 à lista numeros
-        numeros.add(5); //adicionar o número 5 à lista numeros
-
-        tamanhoArrayList = numeros.size();//determinar o tamanho da lista
-        System.out.println("Tamanho do ArrayList: " + tamanhoArrayList);//mostrar o tamanho da lista
-
-        for(int i=0; i<numeros.size(); i++){
-            System.out.print(numeros.get(i) + " ");
+    public static int somaLista(ArrayList<Integer> lista){
+        int soma = 0;
+        for(int i=0; i<lista.size() ; i++){
+            soma = soma + lista.get(i);
         }
-        System.out.println();
-
-        numeros.set(1,564);
-        
-        for(int i=0; i<numeros.size(); i++){
-            System.out.print(numeros.get(i) + " ");
-        }
+        return soma;
     }
 }
 
