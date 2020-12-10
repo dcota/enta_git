@@ -2,18 +2,15 @@ import java.util.Scanner;
 
 public class Exercicio11 {
     public static void main(String[] args){
-        double a = Integer.parseInt(args[0]);
-        double b = Integer.parseInt(args[1]);
-        double c = Integer.parseInt(args[2]);
         //ponto 1
-        /*Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         System.out.println("Introduza os coeficientes da equação...");
         System.out.print("a= ");
         double a = input.nextDouble();
         System.out.print("b= ");
         double b = input.nextDouble();
         System.out.print("c= ");
-        double c = input.nextDouble();*/
+        double c = input.nextDouble();
         //ponto 4
         if(a==0){
             System.out.println("Equação inválida...");
@@ -23,7 +20,7 @@ public class Exercicio11 {
             //ponto 3
             calculaRaizes(delta,a,b);
         }
-        //input.close();
+        input.close();
     }
 
     public static double delta(double a, double b, double c){
