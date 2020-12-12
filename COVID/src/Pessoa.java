@@ -5,7 +5,7 @@ public class Pessoa {
 	private String nome;
 	private int idade;
 	private boolean resultado;
-
+	
 	public Pessoa(int cc, int tlm, String nome, int idade, boolean resultado) {
 		this.cc = cc;
 		this.tlm = tlm;
@@ -13,6 +13,12 @@ public class Pessoa {
 		this.idade = idade;
 		this.resultado = resultado;
 	}
+	
+	public Pessoa() {
+
+	}
+	
+
 
 	public int getCc() {
 		return cc;
