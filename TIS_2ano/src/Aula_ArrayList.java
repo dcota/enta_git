@@ -2,45 +2,45 @@ import java.util.*;
 
 public class Aula_ArrayList {
     public static void main(String[] args) {
-    	//criar a lista de inteiros, uma instância da classe ArrayList
         ArrayList<Integer> lista = new ArrayList<Integer>();
-        //calcular o numero de elementos da lista
-        int tamanhoLista = lista.size();
-        //mostrar na linha de comandos
-        System.out.println("Num elementos da lista: " + tamanhoLista);
-        //adicionar 5 números à lista
-        lista.add(3);
-        lista.add(34);
-        lista.add(54);
-        lista.add(6);
+        //ver dimensÃ£o da lista
+        int numElementos = lista.size();
+        //mostrar numero de elementos da lista
+        System.out.println("NÃºmero de elementos: " + numElementos);
+        //adicionar elementos Ã  lista
+        lista.add(56);
+        lista.add(23);
+        lista.add(45);
+        lista.add(7);
         lista.add(78);
-        //calcular o numero de elementos da lista depois de inserir os 5 números
-        tamanhoLista = lista.size();
-        //mostrar na linha de comandos
-        System.out.println("Num elementos da nova lista: " + tamanhoLista);
-        //chamar o método que mostra o conteúdo da lista
+        numElementos=lista.size();
+        System.out.println("NÃºmero de elementos: " + numElementos);
         mostraLista(lista);
-        //chamar o método que calcula a soma de todos os elementos da lista
-        int soma = somaLista(lista);
-        //mostrar a soma na linha de comandos
-        System.out.println("Soma de todos os elementos da lista: " + soma);
+        lista.remove(3);
+        numElementos=lista.size();
+        System.out.println("NÃºmero de elementos: " + numElementos);
+        mostraLista(lista);
+        lista.add(550);
+        mostraLista(lista);
+        lista.set(4, 1);
+        mostraLista(lista);
+        Collections.sort(lista);
+        mostraLista(lista);
     }
-    
-    //método para mostrar o conteúdo da lista
+
     public static void mostraLista(ArrayList<Integer> lista){
-        for(int i=0; i<lista.size() ; i++){
+        //forma 1
+        for(int i=0; i<lista.size(); i++){
             System.out.print(lista.get(i) + " ");
         }
         System.out.println();
-    }
-    
-    //método para somar todos os elementos da lista
-    public static int somaLista(ArrayList<Integer> lista){
-        int soma = 0;
-        for(int i=0; i<lista.size() ; i++){
-            soma = soma + lista.get(i);
+        /*//forma 2
+        for(int i : lista){
+            System.out.print(i + " ");
         }
-        return soma;
+        System.out.println();
+        //forma 3
+        System.out.println(lista);*/
     }
 }
 
