@@ -11,7 +11,6 @@ public class Main {
 		Pessoa p5 = new Pessoa(111245897, 912254778, "Vítor Magalhães", 23, false);
 		Pessoa p6 = new Pessoa(458796555, 923165894, "João Marques", 68, false);
 		
-			
 		//questão 5
 		ArrayList<Pessoa> pessoasTestadas = new ArrayList<Pessoa>();
 		pessoasTestadas.add(p1);
