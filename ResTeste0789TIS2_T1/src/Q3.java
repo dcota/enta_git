@@ -15,3 +15,4 @@ public class Q3 {
 		return n1 + n2; 
 	}
 }
+

@@ -7,13 +7,25 @@ public class Q5 {
 		int nMes=0;
 		System.out.print("Introduza o número do mês: ");
 		nMes = in.nextInt();
-		System.out.println("O mês é " + diaMes(nMes));
-		System.out.println("\n");
+		if(nMes < 1 || nMes > 12) {
+			System.out.println("Número de mês inválido!");
+		} else {
+			System.out.println("O mês é " + diaMes(nMes));
+			System.out.println("\n");
+		}
 		in.close();
 	}
 	
+	/*public static String diaMes(int n) {
+		String[] meses = 
+			{"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", 
+					"Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+		return meses[n-1];
+	}*/
+
+	
 	public static String diaMes(int n) {
-		String nomeMes="";
+		String nomeMes=null;
 		switch(n) {
 			case 1 :
 				nomeMes="Janeiro";
@@ -54,5 +66,4 @@ public class Q5 {
 		}
 		return nomeMes;
 	}
-
 }
