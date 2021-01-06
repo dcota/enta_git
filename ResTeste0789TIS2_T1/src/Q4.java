@@ -20,5 +20,4 @@ public class Q4 {
 			return true;
 		}
 	}
-
 }
