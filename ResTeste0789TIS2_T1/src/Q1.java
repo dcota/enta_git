@@ -8,8 +8,9 @@ public class Q1 {
 		raio = in.nextDouble();
 		double perimetro = perimetro(raio);
 		double area = area(raio);
-		System.out.printf("O perímetro da circunferência é %.2f mm\n", perimetro);
-		System.out.printf("A área do círculo é %.2f mm2\n", area);
+		System.out.printf("O perimetro da circunferencia e %.2f mm\n", perimetro);
+		System.out.printf("A area do circulo e %.2f mm2\n", area);
+		in.close();
 	}
 	
 	public static double perimetro(double raio) {

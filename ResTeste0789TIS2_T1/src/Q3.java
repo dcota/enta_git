@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Q3 {
 	public static void main(String[]argas) {
 		Scanner in = new Scanner(System.in);
-		System.out.print("Introduzir número 1: ");
+		System.out.print("Introduzir numero 1: ");
 		int n1 = in.nextInt();
-		System.out.print("Introduzir número 2: ");
+		System.out.print("Introduzir numero 2: ");
 		int n2 = in.nextInt();
-		System.out.println("A soma dos números é " + soma(n1, n2));
+		System.out.println("A soma dos numeros e " + soma(n1, n2));
 		in.close();
 	}
 	
@@ -15,4 +15,3 @@ public class Q3 {
 		return n1 + n2; 
 	}
 }
-
