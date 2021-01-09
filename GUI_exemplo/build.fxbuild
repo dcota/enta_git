@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <anttasks:AntTask xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:anttasks="http://org.eclipse.fx.ide.jdt/1.0" buildDirectory="${project}/build">
   <deploy>
-<<<<<<< HEAD:GUI/build.fxbuild
-    <application name="GUI"/>
-=======
-    <application name="GUI_Intro"/>
->>>>>>> d7428e7e85d1944656a80f2a0d4028ea3aada1ed:GUI_Intro/build.fxbuild
+    <application name="GUI_exemplo"/>
     <info/>
   </deploy>
   <signjar/>

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD:GUI/.project
-	<name>GUI</name>
-=======
-	<name>GUI_Intro</name>
->>>>>>> d7428e7e85d1944656a80f2a0d4028ea3aada1ed:GUI_Intro/.project
+	<name>GUI_exemplo</name>
 	<comment></comment>
 	<projects>
 	</projects>
