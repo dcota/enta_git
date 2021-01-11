@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <children>
-      <HBox layoutX="11.0" layoutY="11.0" prefHeight="207.0" prefWidth="633.0">
+      <HBox layoutX="11.0" layoutY="11.0" prefHeight="240.0" prefWidth="633.0">
          <children>
             <VBox prefHeight="291.0" prefWidth="129.0" spacing="10.0">
                <children>
@@ -79,7 +79,7 @@
             <Insets left="10.0" />
          </padding>
       </HBox>
-      <HBox layoutY="285.0" prefHeight="234.0" prefWidth="700.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+      <HBox layoutY="285.0" prefHeight="240.0" prefWidth="700.0" spacing="20.0" AnchorPane.leftAnchor="0.0">
          <children>
             <VBox prefHeight="200.0" prefWidth="200.0">
                <children>
@@ -91,22 +91,27 @@
                   </ListView>
                </children>
             </VBox>
-            <StackPane prefHeight="263.0" prefWidth="64.0">
+            <StackPane prefHeight="220.0" prefWidth="90.0">
                <children>
                   <Button fx:id="itensBtn" mnemonicParsing="false" onAction="#select" text="Itens -&gt;" />
                   <Button fx:id="clearTF" mnemonicParsing="false" onAction="#clearTF" text="Limpar">
                      <StackPane.margin>
-                        <Insets top="70.0" />
+                        <Insets top="80.0" />
                      </StackPane.margin>
                   </Button>
                </children>
             </StackPane>
-            <VBox prefHeight="200.0" prefWidth="200.0">
+            <VBox prefHeight="204.0" prefWidth="200.0">
                <children>
                   <Label text="Escolhidos:" />
                   <TextArea fx:id="textField1" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </VBox>
+            <AnchorPane prefHeight="220.0" prefWidth="120.0">
+               <children>
+                  <Button alignment="BOTTOM_RIGHT" layoutX="60.0" layoutY="187.0" mnemonicParsing="false" onAction="#changeBtnPushed" text="Change" />
+               </children>
+            </AnchorPane>
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" />

@@ -1,8 +1,14 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -13,6 +19,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 
 public class SampleController {
 	
@@ -74,6 +81,17 @@ public class SampleController {
     
     @FXML
     private Button clearTF;
+    
+    
+    @FXML
+    public void changeBtnPushed(ActionEvent event) throws IOException {
+    	Parent newView = FXMLLoader.load(getClass().getResource("View.fxml"));
+    	Scene newScene = new Scene(newView);
+    	Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    	window.setScene(newScene);
+    	window.show();
+    	
+    }
 
     @FXML
     public void encomenda(ActionEvent event) {
