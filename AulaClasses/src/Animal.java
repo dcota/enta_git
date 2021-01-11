@@ -14,7 +14,7 @@ public class Animal {
 		this.idadeAnimal = idade;	
 	}
 	
-	//setters ou métodos de set	
+	//setters ou mÃ©todos de set	
 	public void setTipoAnimal(String tipo) {
 		this.tipoAnimal = tipo;
 	}
@@ -31,7 +31,7 @@ public class Animal {
 		this.idadeAnimal = idade;
 	}
 	
-	//getters ou métodos de get
+	//getters ou mï¿½todos de get
 	public String getTipoAnimal() {
 		return tipoAnimal;
 	}
@@ -47,6 +47,4 @@ public class Animal {
 	public int getIdadeAnimal() {
 		return idadeAnimal;
 	}
-	
-	
 }
