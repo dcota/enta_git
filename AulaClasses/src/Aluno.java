@@ -1,4 +1,5 @@
 public class Aluno {
+    //atributos da classe Aluno
     private String nome;
     private int idade;
     private String morada;
@@ -6,10 +7,10 @@ public class Aluno {
     private String email;
     private float mediaNotas;
 
+    //construtores
     public Aluno(){
         //construtor vazio
     }
-
     public Aluno(String nome, int idade, String morada, int CC, String email, float mediaNotas){
         this.nome=nome;
         this.idade=idade;
@@ -19,6 +20,9 @@ public class Aluno {
         this.mediaNotas=mediaNotas;
     }
 
+
+
+    //setters ou métodos de set
     public void setNome(String nome){
         this.nome=nome;
     }
@@ -38,6 +42,7 @@ public class Aluno {
         this.mediaNotas=mediaNotas;
     }
 
+    //getters ou métodos de get
     public String getNome(){
         return this.nome;
     }
