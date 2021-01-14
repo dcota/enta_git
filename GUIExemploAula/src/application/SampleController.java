@@ -2,12 +2,15 @@ package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
 public class SampleController {
 	
@@ -38,7 +41,32 @@ public class SampleController {
     @FXML private TextField valor2;
 
     @FXML private TextField resultado;
+    
+    @FXML private RadioButton radioBtn1;
 
+    @FXML private RadioButton radioBtn2;
+
+    @FXML private RadioButton radioBtn3;
+    
+    @FXML private Label label5;
+
+	private ToggleGroup toggleGroup;
+    
+    @FXML
+    void escolherRadio1Btn(ActionEvent event) {   	
+    	this.label5.setText("Português");
+    }
+    
+    @FXML
+    void escolherRadio2Btn(ActionEvent event) {   	
+    	this.label5.setText("Francês");
+    }
+    
+    @FXML
+    void escolherRadio3Btn(ActionEvent event) {   	
+    	this.label5.setText("Inglês");
+    }
+    
 	@FXML
 	public void escreveTexto(ActionEvent event) {
 		String texto = this.textField1.getText();
@@ -72,11 +100,26 @@ public class SampleController {
 	
 	@FXML
 	public void soma(ActionEvent event) {
-		int val1 = Integer.parseInt(this.valor1.getText());
-		int val2 = Integer.parseInt(this.valor2.getText());
-		int soma = val1 + val2;
-		String res = String.valueOf(soma);
-		this.resultado.setText(res);
+		try {
+			int val1 = Integer.parseInt(this.valor1.getText());
+			int val2 = Integer.parseInt(this.valor2.getText());
+			int soma = val1 + val2;
+			String res = String.valueOf(soma);
+			this.resultado.setText(res);
+		}catch(NumberFormatException e) {
+			Alert alerta = new Alert(Alert.AlertType.ERROR);
+			alerta.setHeaderText(null);
+			alerta.setTitle("Ocorreu um erro!");
+			alerta.setContentText("Formato incorreto...");
+			alerta.showAndWait();
+			reset();
+		}
+		
+	}
+	
+	public void reset() {
+		this.valor1.setText("");
+		this.valor2.setText("");
 	}
 	
 	public void initialize () {
@@ -86,6 +129,14 @@ public class SampleController {
 		
 		//preencher as opções da choiceBox	
 		this.comboBox.getItems().addAll("Coca-Cola","Fanta","Kima","Sprite");
+		
+		//criar grupo Toggle
+		this.toggleGroup = new ToggleGroup();
+		this.radioBtn1.setToggleGroup(toggleGroup);
+		this.radioBtn2.setToggleGroup(toggleGroup);
+		this.radioBtn3.setToggleGroup(toggleGroup);
+		
+		
 	}
 
 }
